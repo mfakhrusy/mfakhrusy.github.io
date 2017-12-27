@@ -1,0 +1,29 @@
+{
+	"quote": [
+		{
+			"author": "Blazing Red",
+			"quoteText": "I am hot!",
+			"bgColor": "#FF0000"
+		},
+		{
+			"author": "Breezy Wind",
+			"quoteText": "I am the breeziest!",
+			"bgColor": "#98FB98"
+		},
+		{
+			"author": "Earthy Brown",
+			"quoteText": "Earth is a nice place to stay!",
+			"bgColor": "#8B4513"
+		},
+		{
+			"author": "Orange Sunset",
+			"quoteText": "Keep it dusky, and you'll befriend of dusk!",
+			"bgColor": "#FF4500"
+		},
+		{
+			"author": "Freezing Ice",
+			"quoteText": "I am cool!",
+			"bgColor": "#1E90FF"
+		}
+	]
+}
