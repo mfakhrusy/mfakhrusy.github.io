@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (isEqual) {
           screenUpper.removeChild(screenUpper.firstElementChild);
           screenLower.removeChild(screenLower.firstElementChild);
-          isEqual = false;
         }
 
         // remove math process
@@ -138,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
             // change ifEqual to false 
             // to make it initialized
+            isEqual = false;
           }
 
         } else {
@@ -151,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             
           // change ifEqual to false 
           // to make it initialized
+          isEqual = false;
         }
       }
     });
