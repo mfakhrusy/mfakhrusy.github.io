@@ -555,6 +555,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // button CE function
   let buttonCE = buttonsParentID["calc-ce"];
   buttonCE.addEventListener("click", function(e) {
+
+    // need to differentiate between deleting a math process
+    // and deleting a number
+    // 1. math process -> delete the lastChild
+    // 2. number -> delete lastChild until a nearest math process or null (null when first number)
+    
+
         
   });
 });
