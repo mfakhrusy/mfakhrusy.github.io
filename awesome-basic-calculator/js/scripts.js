@@ -25,6 +25,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
   // the user can only press math button if a valid number is already appear
   let isMathOK = false;
 
+  let isCEPossible = false;
+
+  // hack for if CE on math process
+  let isCEMathProcess = false;
+
+  // hack for if CE on number
+  let isCENumber = false;
+
   // need to save the variable before computation
   // e.g 3x5 (need to save 3 WHEN pressed x so we can just
   // compute it right away when we pressed 5)
@@ -85,6 +93,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
           screenUpper.removeChild(screenUpper.firstElementChild);
         }
 
+        // remove 0 while isCENumber
+        if (isCENumber) {
+          screenUpper.removeChild(screenUpper.firstElementChild);
+          isCENumber = false;
+
+          if (isFirstNumber) {
+            screenLower.removeChild(screenLower.firstElementChild);
+          }
+        }
+
         // we need to create the <p> tag inside the screen first
         // We can do that by checking if the screenLower
         // and screenUpper contains any element
@@ -125,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             screenUpper.firstElementChild.appendChild(buttonNumber.firstElementChild.firstChild.cloneNode(true));
             tempDigit++;
             isMathOK = true;
+            isCEPossible = true;
     
           }
 
@@ -152,6 +171,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
           // change ifEqual to false 
           // to make it initialized
           isEqual = false;
+
+          isCEPossible = true;
         }
       }
     });
@@ -202,21 +223,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
   for (let buttonMath of buttonsMath) {
     buttonMath.addEventListener("click", function(e) {
 
-      let tempNumValuesArray = screenUpper.firstElementChild.childNodes;
-      
-      // because the result is the p tag and its children
-      // we need to make all children to one variable
-      let tempNumValue = "";
-      for (let num of tempNumValuesArray) {
-        
-        // we should explicitly put the string
-        // for readibility
-        // so we know that all of it will be a String
-        // and will be converted to Number later
-        // add !isNan to make sure that it's really a number
-        tempNumValue += String(num.nodeValue);
+	    let tempNumValuesArray = screenUpper.firstElementChild.childNodes;
+      let tempNumValue;
+	      
+      // need to have an if after CE button is pressed
+      // after CE is pressed, the tempNumValue should have the
+      // same value as numBeforeMath because that's
+      // the last number of computation
+      if (isCEMathProcess) {
+
+        tempNumValue = numBeforeMath;
+        // should be false again (default)
+        isCEMathProcess = false;
+
+      } else {
+	
+	      // because the result is the p tag and its children
+	      // we need to make all children to one variable
+	      tempNumValue = "";
+
+	      for (let num of tempNumValuesArray) {
+	        
+	        // we should explicitly put the string
+	        // for readibility
+	        // so we know that all of it will be a String
+	        // and will be converted to Number later
+	        // add !isNan to make sure that it's really a number
+	        tempNumValue += String(num.nodeValue);
+	      }
+	        tempNumValue = Number(tempNumValue);
       }
-      tempNumValue = Number(tempNumValue);
 
       // special case -> equal
       if (buttonMath.parentNode.id === "calc-equal") {
@@ -340,6 +376,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           isMathProcess = true;
           tempDigit = 0;
           isDecimal = false;
+          isFirstNumber = false;
         }
 
       } else if (buttonMath.parentNode.id === "calc-division") {
@@ -395,6 +432,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           isMathProcess = true;
           tempDigit = 0;
           isDecimal = false;
+          isFirstNumber = false;
 
         }
 
@@ -451,6 +489,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           isMathProcess = true;
           tempDigit = 0;
           isDecimal = false;
+          isFirstNumber = false;
 
         }
 
@@ -508,6 +547,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           isMathProcess = true;
           tempDigit = 0;
           isDecimal = false;
+          isFirstNumber = false;
 
         }
       }
@@ -546,6 +586,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     isMathProcess = false;
     isFirstNumber = true;
     isResultDecimal = false;
+    isCEPossible = false;
+    isCEMathProcess = false;
+    isCENumber = false;
     isEqual = false;
     tempDigit = 0;
     numBeforeMath = 0;
@@ -556,12 +599,114 @@ document.addEventListener("DOMContentLoaded", function(event) {
   let buttonCE = buttonsParentID["calc-ce"];
   buttonCE.addEventListener("click", function(e) {
 
-    // need to differentiate between deleting a math process
-    // and deleting a number
-    // 1. math process -> delete the lastChild
-    // 2. number -> delete lastChild until a nearest math process or null (null when first number)
-    
 
+    if (isCEPossible) {
+
+      isCEPossible = false;
+	
+	    // need to differentiate between deleting a math process
+	    // and deleting a number
+	    // 1. math process -> delete the lastChild
+	    // 2. number -> delete lastChild until a nearest math process or null (null when first number)
+	    
+	    if (isEqual) {
+	    
+		    // remove the nodes inside paraghraph of screen upper 
+		    // and screen lower
+		    // we need to remove THOSE + the paraghraph tag inside
+		    let screenUpper = document.getElementById("screen-upper");
+		    let screenLower = document.getElementById("screen-lower");
+		
+		    while (screenUpper.firstChild) {
+		      screenUpper.removeChild(screenUpper.firstChild);
+		    }
+		
+		    while (screenLower.firstChild) {
+		      screenLower.removeChild(screenLower.firstChild);
+		    }
+		    
+		    //add 0
+		    screenLower.appendChild(document.createElement("p"));
+		    screenLower.firstElementChild.appendChild(document.createTextNode("0"));
+		    
+		    screenUpper.appendChild(document.createElement("p"));
+		    screenUpper.firstElementChild.appendChild(document.createTextNode("0"));
+		
+		    // variable re-initialization
+		    isDecimal = false;
+		    isInitialized = true;
+		    isMathOK = false;
+		    isMathProcess = false;
+		    isFirstNumber = true;
+		    isResultDecimal = false;
+		    isEqual = false;
+		    isCEMathProcess = false;
+	      tempDigit = 0;
+		    numBeforeMath = 0;
+		    lastMathProcess = "";
+	
+	    } else if (isMathProcess) {
+	      
+	      // delete lastChild only
+		    let screenUpper = document.getElementById("screen-upper");
+		    let screenLower = document.getElementById("screen-lower");
+	
+	      screenUpper.firstElementChild.removeChild(screenUpper.firstElementChild.lastChild);
+	      screenLower.firstElementChild.removeChild(screenLower.firstElementChild.lastChild);
+		    
+	      // get the number value of screen 
+	      // let tempNum = screenLower.firstElementChild.lastChild.nodeValue;
+	      // numBeforeMath = tempNum;
+	
+	      // add 0 to screenUpper
+		    screenUpper.appendChild(document.createElement("p"));
+		    screenUpper.firstElementChild.appendChild(document.createTextNode("0"));
+	
+	      isMathProcess = false;
+	      isMathOK = true;
+	      lastMathProcess = "";
+	      isCEMathProcess = true;
+	
+	    } else { // if number
+	
+	      // need to delete the whole child including dot for decimal
+	      let tempMath = "x/+-";
+	
+	      let screenUpper = document.getElementById("screen-upper");
+	      let screenLower = document.getElementById("screen-lower");
+	
+	      // remove the upper
+	      screenUpper.removeChild(screenUpper.firstElementChild);
+	      
+	      // add 0 to screenUpper
+		    screenUpper.appendChild(document.createElement("p"));
+		    screenUpper.firstElementChild.appendChild(document.createTextNode("0"));
+	      
+	      // add 0 to screenLower
+        if (isFirstNumber) {
+	        
+          // remove the lower
+	        screenLower.removeChild(screenLower.firstElementChild);
+		      screenLower.appendChild(document.createElement("p"));
+		      screenLower.firstElementChild.appendChild(document.createTextNode("0"));
+
+          isCENumber = true;
+
+        } else {
+
+		      // remove the lower part
+		      while (tempMath.indexOf(screenLower.firstElementChild.lastChild.nodeValue) === -1) {
+		        screenLower.firstElementChild.removeChild(screenLower.firstElementChild.lastChild);
+		      }
         
+	      
+
+        }
+	
+	      // isMathProcess = true;
+	      isMathOK = false;
+	
+	    }
+    }
   });
 });
