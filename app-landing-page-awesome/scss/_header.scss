@@ -1,0 +1,98 @@
+#page-header, .header-wrapper {
+  height: 100%;
+  width: auto;
+
+  @media screen and (max-width: $width-minimum-pc) {
+    height: auto;
+    position: relative;
+  }
+}
+
+.header-wrapper {
+	background: url(../img/header-bg2.jpg) center no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+  align-items: center;
+  font-family: $primary-font;
+  width: auto;
+
+  @media screen and (max-width: $width-minimum-pc) {
+    padding: 5rem 0;
+  }
+}
+
+.header-inner-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: auto;
+  height: 100%;
+
+  > div {
+    width: 45rem;
+
+    @media screen and (min-width: $width-small-phone) and 
+    (max-width: $width-minimum-pc - 1px) {
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: $width-minimum-pc) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+.header-description {
+  height: 20rem;
+
+  @media screen and (max-width: $width-minimum-pc) {
+    height: 15rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.header-description-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  @media screen and (max-width: $width-minimum-pc) {
+    font-size: 80%;
+    margin-bottom: 3rem;
+    margin-top: 1rem;
+  }
+
+  @media screen and (min-width: $width-small-phone) and 
+  (max-width: $width-medium-tablet) {
+    font-size: 60%;
+  }
+}
+
+.header-mockup {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.device-inner-screen {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: url(../img/mockup-img.jpg) center no-repeat;
+  background-size: cover;
+
+  h3 {
+    margin-top: 10rem;
+  }
+}
