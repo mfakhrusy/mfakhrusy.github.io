@@ -13,20 +13,34 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: mfakhrusy's blog
-email: mfakhrusy@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://mfakhrusy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+locale          : "en-US"
+title           : "mfakhrusy's blog"
+name            : "Muhamad Fakhrusy"
+description     : "I Build Things on The Web" # this means to ignore newlines until "baseurl:"
+skills          : "Front End Developer - Back End Developer"
+
+baseurl         : "" # the subpath of your site, e.g. /blog
+url             : "https://mfakhrusy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Site Author
+author:
+  name          : "Muhamad Fakhrusy"
+  nickname      : "mfakhrusy"
+  bio           :
+  location      :
+  email         : "fakhrusy.m@gmail.com"
+  github        : "mfakhrusy"
+  gitlab        : 
+  codepen       : 
+  instagram     : 
+  twitter       : "v8areu"
+  facebook      :
+  linkedin      : "mfakhrusy"
+  stackoverflow :
+  youtube       :
 
 # Build settings
-markdown: kramdown
-# theme: minima
+markdown        : kramdown
 plugins:
   - jekyll-feed
 
@@ -37,10 +51,3 @@ exclude:
   - node_modules
   - package.json
   - gulpfile.js
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
