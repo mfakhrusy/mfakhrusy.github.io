@@ -1,0 +1,57 @@
+section#page-about {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: beige;
+  font-family: $primary-font;
+}
+
+.about-inner {
+  margin: 8rem 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > div {
+    margin: 2rem 0;
+  }
+}
+
+.about-head {
+  text-align: center;
+}
+
+.about-skills {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  > div {
+    width: 30%;
+  }
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-title {
+  margin-bottom: 3rem;
+}
+
+.skill-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 30rem;
+
+  i {
+    margin: 1rem;
+    font-size: 7.5rem;
+  }
+}

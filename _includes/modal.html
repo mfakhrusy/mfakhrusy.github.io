@@ -1,0 +1,28 @@
+{% for post in site.posts %}
+  <section id="modal-{{ post.modal-id }}" class="modal modal-hidden">
+    <div class="modal-box">
+      <div class="modal-inner">
+        <div class="modal-head">
+          <h1>Project - {{ post.modal-id }}</h1>
+        </div>
+        <div class="modal-image">
+          <img src="/assets/img/portfolio/{{ post.img }}" alt="{{ post.alt }}">
+        </div>
+        <div class="modal-description">
+          <p>{{ post.description }}</p>
+        </div>
+        <div class="modal-footer">
+          <ul class="modal-footer-list">
+            <li class="modal-footer-item">Client: {{ post.client }}</li>
+            <li class="modal-footer-item">Date: {{ post.project-date }}</li>
+            <li class="modal-footer-item">Category: {{ post.category }}</li>
+          </ul>
+        </div>
+        <div class="modal-button" id="modal-button-{{ post.modal-id }}">
+          <!--Close-->
+          <a href="#portfolio-img-{{ post.modal-id }}" class="costum-button">Close</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endfor %}

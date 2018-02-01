@@ -1,0 +1,18 @@
+<section id="page-portfolio">
+  <div class="portfolio-inner">
+    <div class="portfolio-head">
+      <h1>{{ site.skills }}</h1>
+      <h2>Projects</h2>
+    </div>
+    <div class="portfolio-content">
+      {% for post in site.posts %}
+        <div id="portfolio-img-{{ post.modal-id }}" class="portfolio-item">
+          <div class="portfolio-caption">
+            <i class="fa fa-search-plus fa-5x"></i>
+          </div>
+          <img src="assets/img/portfolio/{{ post.img }}" alt="{{ post.alt }}">
+        </div>  
+      {% endfor %}
+    </div>
+  </div>
+</section>

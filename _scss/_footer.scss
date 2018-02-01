@@ -1,0 +1,17 @@
+footer#page-footer {
+  display: flex;
+  height: auto;
+  background-color: $secondary-color;
+  font-family: $primary-font;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  margin: 5rem 0;
+  width: 100%;  
+}
