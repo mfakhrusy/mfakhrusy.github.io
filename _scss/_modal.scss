@@ -4,6 +4,10 @@ body.modal-open {
   position: fixed;
 }
 
+nav.modal-open {
+  display: none !important;
+}
+
 section.modal {
   position: fixed;
   max-height: calc(100vh);
