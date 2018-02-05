@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
   // which not # and #0
   .not('a[href="#"]')
   .not('a[href="#0"]')
-  .not('a[href^=#portfolio-img]') // do not select the modal close button
+  .not('a[href^=portfolio-img]') // do not select the modal close button
   .click(function(event) {
 
     if (
