@@ -21,6 +21,11 @@ section#page-about {
 
 .about-head {
   text-align: center;
+  padding: 0 2rem;
+
+  p {
+    word-wrap: break-word;
+  }
 }
 
 .about-skills {
@@ -31,12 +36,17 @@ section#page-about {
   @media screen and (min-width: $width-small-phone) and
   (max-width: $width-medium-tablet - 1) {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
+    text-align: center;
   }
 
   > div {
     width: 30%;
+    @media screen and (min-width: $width-small-phone) and
+    (max-width: $width-medium-tablet - 1) {
+      width: 100%;
+    }
   }
 }
 
@@ -45,6 +55,10 @@ section#page-about {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: $width-small-phone) and
+  (max-width: $width-medium-tablet - 1) {
+    margin: 5rem 0;
+  }
 }
 
 .skill-title {
@@ -59,13 +73,24 @@ section#page-about {
 
   @media screen and (min-width: $width-small-phone) and
   (max-width: $width-medium-tablet - 1) {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row !important;
+    align-items: center;
     justify-content: center;
+    height: auto;
+    margin: 2rem 0;
+  }
+
+  @media screen and (min-width: $width-medium-tablet) and
+  (max-width: $width-large-tablet - 1) {
+    height: 50rem;
   }
 
   i {
     margin: 1rem;
     font-size: 7.5rem;
   }
+}
+
+.skill-description {
+  text-align: center;
 }

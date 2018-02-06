@@ -13,14 +13,20 @@
         </div>
         <div class="modal-footer">
           <ul class="modal-footer-list">
-            <li class="modal-footer-item">Client: {{ post.client }}</li>
-            <li class="modal-footer-item">Date: {{ post.project-date }}</li>
-            <li class="modal-footer-item">Category: {{ post.category }}</li>
+            <li class="modal-footer-item">
+              <strong>Client</strong><br> {{ post.client }}
+            </li>
+            <li class="modal-footer-item">
+              <strong>Date</strong><br> {{ post.project-date }}
+            </li>
+            <li class="modal-footer-item">
+              <strong>Category</strong><br> {{ post.category }}
+            </li>
           </ul>
         </div>
         <div class="modal-button" id="modal-button-{{ post.modal-id }}">
           <!--Close-->
-          <a href="#inner-portfolio" class="costum-button">Close</a>
+          <a href="#portfolio-img-{{ post.modal-id }}" class="costum-button">Close</a>
         </div>
       </div>
     </div>
