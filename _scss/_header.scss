@@ -9,15 +9,38 @@ header#page-header {
 
   color: $primary-color;
   font-family: $primary-font;
+
+  @media screen and (min-width: $width-small-phone) and
+  (max-width: $width-large-tablet - 1) {
+    background-position-x: right;
+  }
 }
 
 .header-inner {
-  margin-right: 10rem;
+  margin-right: 8rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 50rem;
   padding-top: 8rem;
+
+  @media screen and(min-width: $width-small-phone) and
+  (max-width: $width-medium-tablet - 1) {
+    text-align: center;
+    margin: 0;
+  }
+
+  @media screen and (min-width: $width-medium-tablet) and
+  (max-width: $width-large-tablet - 1) {
+    margin-right: 5rem;
+    font-size: 80%;
+  }
+
+  @media screen and (min-width: $width-large-tablet) and 
+  (max-width: $width-medium-pc - 1) {
+    margin-right: 5rem;
+    font-size: 80%;
+  }
 }
 
 .header-button {

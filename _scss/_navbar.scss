@@ -9,7 +9,7 @@ nav#page-nav {
   z-index: 999; // to make it on top, lil hack
   @include transition(0.5s ease-in);
 
-  @media screen and (max-width: $width-minimum-pc) {
+  @media screen and (max-width: $width-minimum-pc - 1) {
     background-color: #fff;
   }
 }
@@ -21,8 +21,10 @@ nav#page-nav {
   height: 6rem !important;
   @include transition(0.5s ease-out);
 
-  a {
-    color: #fff !important;
+  @media screen and (min-width: $width-minimum-pc) {
+    a {
+      color: #fff !important;
+    }  
   }
 }
 
@@ -34,17 +36,27 @@ nav#page-nav {
 
   h3 {
     margin-left: 10rem;
-
-    &:active {
-      color: #545454;
-    }
+    
     a {
       text-decoration: none;
       color: #000;
       display: inline-block;
+      @include transition(0.2s ease-in);
+
+      &:active {
+        color: #545454;
+        @include transition(0.2s ease-out);
+      }
+
+      &:hover {
+        @media screen and (min-width: $width-minimum-pc) {
+          color: #ffffff;
+          @include transition(0.2s ease-out);   
+        }
+      }
     }
 
-    @media screen and (max-width: $width-minimum-pc) {
+    @media screen and (max-width: $width-minimum-pc - 1) {
       margin-left: 2rem;
       font-size: 80%;
     }
@@ -70,16 +82,20 @@ ul.navbar-ul {
       display: inline-block;
       height: 100%;
       width: 100%;
-      @include transition(0.2s ease);
+      @include transition(0.2s ease-in);
 
       &:hover {
-        color: $primary-color;
-        @include transition(0.2s ease);
+
+        @media screen and (min-width: $width-minimum-pc) {
+          // color: darken($color: #ffffff, $amount: 50%);
+          color: lighten($color: #000000, $amount: 100%);
+          @include transition(0.2s ease-out);  
+        }      
       }
     }
   }
 
-  @media screen and (max-width: $width-minimum-pc) {
+  @media screen and (max-width: $width-minimum-pc - 1) {
     margin: 0 2rem 0 0;
     font-size: 80%;
   }

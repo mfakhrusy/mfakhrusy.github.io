@@ -45,6 +45,12 @@ section#page-portfolio {
     margin: 0;
     padding: 0;
     z-index: 1;
+
+    @media screen and (min-width: $width-small-phone) and
+    (max-width: $width-medium-tablet - 1) {
+      height: auto;
+      width: 100%;
+    }
   }
 }
 

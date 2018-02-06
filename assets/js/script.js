@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", function(e) {
   // change navbar color when scroll
   const navbarText = document.querySelector("page-nav a");
   document.addEventListener("scroll", function(e) {
+    $('#navbar-checkbox').prop('checked', false);
+
     if (window.pageYOffset > 10) {
       navbar.classList.add("navbar-colored");
     } else {
@@ -51,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function(e) {
   }); 
 
   // smooth scrolling using jquery TODO change to vanilla JS for idk reason
-  $('a[href*="#"]')
+  $('a[href*="#page"]')
   // which not # and #0
-  .not('a[href="#"]')
-  .not('a[href="#0"]')
-  .not('a[href^=portfolio-img]') // do not select the modal close button
+  // .not('a[href=#inner-portfolio]') // do not select the modal close button
+  // .not('a[href="#"]')
+  // .not('a[href="#0"]')
   .click(function(event) {
 
     if (
@@ -83,4 +85,7 @@ document.addEventListener("DOMContentLoaded", function(e) {
       }
     }
   });
+
+  // close the menu on small screen
+  
 });

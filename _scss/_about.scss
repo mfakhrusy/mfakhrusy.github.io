@@ -28,6 +28,13 @@ section#page-about {
   justify-content: space-around;
   align-items: flex-start;
 
+  @media screen and (min-width: $width-small-phone) and
+  (max-width: $width-medium-tablet - 1) {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+
   > div {
     width: 30%;
   }
@@ -49,6 +56,13 @@ section#page-about {
   flex-wrap: wrap;
   justify-content: center;
   height: 30rem;
+
+  @media screen and (min-width: $width-small-phone) and
+  (max-width: $width-medium-tablet - 1) {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
 
   i {
     margin: 1rem;
