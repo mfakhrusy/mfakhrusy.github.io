@@ -8,6 +8,6 @@ project-date: January 2018
 client: Side Project
 category: Web Development
 description: A responsive landing page for a mobile application. Use this to showcase your mobile application so it can appear more professional and add some attractiveness to your client.
-url: https://github.com/mfakhrusy/mobile-landing-page
+project-url: https://github.com/mfakhrusy/mobile-landing-page
 
 ---

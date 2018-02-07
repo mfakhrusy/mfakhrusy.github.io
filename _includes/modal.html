@@ -26,6 +26,9 @@
         </div>
         <div class="modal-button" id="modal-button-{{ post.modal-id }}">
           <!--Close-->
+          {% if post.project-url %}
+          <a href="{{ post.project-url }}" class="costum-button" target="_blank">Code</a>          
+          {% endif %}
           <a href="#portfolio-img-{{ post.modal-id }}" class="costum-button">Close</a>
         </div>
       </div>
