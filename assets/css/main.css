@@ -827,3 +827,6 @@ section.modal-hidden {
   padding: 0; }
   .modal-footer-list li {
     margin: 0 1rem; }
+
+#modal-1 .modal-box {
+  background-color: #ffa9a9; }
