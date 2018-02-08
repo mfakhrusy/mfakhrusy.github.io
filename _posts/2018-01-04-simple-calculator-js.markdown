@@ -10,4 +10,5 @@ client: Side Project
 category: Web Development
 description: A simple calculator made by HTML, CSS, Javascript, and a bit of love.
 project-url: https://github.com/mfakhrusy/simple-calculator-js
+demo-url: /simple-calculator-js/
 ---

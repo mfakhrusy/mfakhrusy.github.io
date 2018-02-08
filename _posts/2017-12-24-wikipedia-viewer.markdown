@@ -10,4 +10,5 @@ client: Side Project
 category: Web Development
 description: Awesome wikipedia viewer for your knowledge needs!
 project-url: https://github.com/mfakhrusy/wikipedia-viewer
+demo-url: /wikipedia-viewer/
 ---

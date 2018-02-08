@@ -26,6 +26,9 @@
         </div>
         <div class="modal-button" id="modal-button-{{ post.modal-id }}">
           <!--Close-->
+          {% if post.demo-url %}
+          <a href="{{ site.url }}{{ post.demo-url }}" class="costum-button" target="_blank">Demo</a>          
+          {% endif %}
           {% if post.project-url %}
           <a href="{{ post.project-url }}" class="costum-button" target="_blank">Code</a>          
           {% endif %}
