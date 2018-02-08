@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Wikipedia Viewer
 modal-id: 2
 date: 2017-12-24
 img: wikipedia-viewer-ss.jpg

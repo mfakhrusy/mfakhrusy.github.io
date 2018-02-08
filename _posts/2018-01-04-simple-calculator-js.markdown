@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Simple Calculator
 modal-id: 3
 date: 2018-01-04
 img: simple-calculator-ss.jpg

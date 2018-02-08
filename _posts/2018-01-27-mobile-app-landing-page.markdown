@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Mobile Application Landing Page
 modal-id: 1
 date: 2018-01-27
 img: app-landing-page-ss.jpg
