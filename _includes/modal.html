@@ -1,7 +1,7 @@
 {% for post in site.posts %}
   <section id="modal-{{ post.modal-id }}" class="modal modal-hidden">
     <div class="modal-box">
-      <div class="modal-inner">
+      <!-- <div class="modal-inner"> -->
         <div class="modal-head">
           <h1>Project - {{ post.modal-id }}: {{ post.title }}</h1>
         </div>
@@ -14,27 +14,27 @@
         <div class="modal-footer">
           <ul class="modal-footer-list">
             <li class="modal-footer-item">
-              <strong>Client</strong><br> {{ post.client }}
+              <h3>Client</h3> {{ post.client }}
             </li>
             <li class="modal-footer-item">
-              <strong>Date</strong><br> {{ post.project-date }}
+              <h3>Date</h3> {{ post.project-date }}
             </li>
             <li class="modal-footer-item">
-              <strong>Category</strong><br> {{ post.category }}
+              <h3>Category</h3> {{ post.category }}
             </li>
           </ul>
         </div>
         <div class="modal-button" id="modal-button-{{ post.modal-id }}">
           <!--Close-->
           {% if post.demo-url %}
-          <a href="{{ site.url }}{{ post.demo-url }}" class="costum-button" target="_blank">Demo</a>          
+          <a href="{{ post.demo-url }}" class="costum-button" target="_blank">Demo</a>          
           {% endif %}
           {% if post.project-url %}
           <a href="{{ post.project-url }}" class="costum-button" target="_blank">Code</a>          
           {% endif %}
           <a href="#portfolio-img-{{ post.modal-id }}" class="costum-button">Close</a>
         </div>
-      </div>
+      <!-- </div> -->
     </div>
   </section>
 {% endfor %}

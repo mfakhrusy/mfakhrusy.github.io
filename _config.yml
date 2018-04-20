@@ -17,7 +17,7 @@ locale          : "en-US"
 title           : "mfakhrusy's site"
 name            : "Muhamad Fakhrusy"
 description     : "I Build Things on The Web" # this means to ignore newlines until "baseurl:"
-skills          : "Front End Developer - Back End Developer"
+skills          : "Front End Developer"
 
 baseurl         : "" # the subpath of your site, e.g. /blog
 url             : "https://mfakhrusy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
