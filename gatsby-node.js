@@ -4,4 +4,33 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+const path = require("path");
+
+exports.onCreateWebpackConfig = ({
+  actions,
+  loaders,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
+    },
+    module: {
+      rules: [
+        {
+          test: /\.less$/,
+          use: [
+            // We don't need to add the matching ExtractText plugin
+            // because gatsby already includes it and makes sure its only
+            // run at the appropriate stages, e.g. not in development
+            loaders.miniCssExtract(),
+            loaders.css({ importLoaders: 1 }),
+            // the postcss loader comes with some nice defaults
+            // including autoprefixer for our configured browsers
+            loaders.postcss(),
+            "less-loader",
+          ],
+        },
+      ],
+    },
+  });
+};
