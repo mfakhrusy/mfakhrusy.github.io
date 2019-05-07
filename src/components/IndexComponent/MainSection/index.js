@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StaticQuery, graphql } from "gatsby";
 
-import Terminal from "components/Terminal";
+import Terminal from "components/IndexComponent/Terminal";
 
 import "./index.less";
 
@@ -10,7 +10,7 @@ export default class MainSection extends Component {
     return (
       <StaticQuery
         query={graphql`
-          query SiteAuthorQuery {
+          query {
             site {
               siteMetadata {
                 author

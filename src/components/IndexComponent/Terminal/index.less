@@ -1,14 +1,28 @@
 @terminal-border-radius: 3px;
 
 .terminal {
+  width: 600px;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
   .terminal-head,
   .terminal-content {
     padding: 0 10px;
+    font-size: 12px;
   }
 
   .terminal-head {
     background-color: #E0E0E0;
     border-radius: @terminal-border-radius @terminal-border-radius 0 0;
+    display: flex;
+
+    > span:first-of-type {
+      margin-right: auto;
+    }
+
+    > span:last-of-type {
+      margin-left: 10px;
+    }
   }
 
   .terminal-content {
@@ -16,5 +30,6 @@
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 0 0 @terminal-border-radius @terminal-border-radius;
     font-family: monospace;
+    height: 300px;
   }
 }
