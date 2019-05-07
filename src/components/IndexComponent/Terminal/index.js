@@ -16,8 +16,8 @@ class Terminal extends React.Component {
       <div className="terminal">
         <div className="terminal-head">
           <TerminalAuthorInfo siteAuthor={siteAuthor} />
-          <span><MinimizeButton /></span>
-          <span><CloseButton /></span>
+          <span><MinimizeButton onClick={() => undefined} /></span>
+          <span><CloseButton onClick={() => undefined} /></span>
         </div>
         <div className="terminal-content">
           <TerminalAutoTyping siteAuthor={siteAuthor} />
