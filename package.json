@@ -10,6 +10,7 @@
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-emotion": "^4.0.6",
+    "gatsby-plugin-less": "^2.0.12",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.0",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -21,7 +22,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "typed.js": "^2.0.10"
+    "typed.js": "^2.0.10",
+    "webpack": "^4.30.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
