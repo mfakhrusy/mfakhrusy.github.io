@@ -4,10 +4,15 @@ import { author } from "config/info";
 
 import "./index.scss";
 
-export class AuthorInfo extends React.Component<{}, {}> {
+interface IAuthorInfoProps {
+  active?: boolean;
+}
+
+export class AuthorInfo extends React.Component<IAuthorInfoProps, {}> {
   public render() {
+    const { active } = this.props;
     return (
-      <span>{`${author}@${author}PC`}</span>
+      <span>{`${author}@${author}PC${active ? "~:$ " : ""}`}</span>
     );
   }
 }
