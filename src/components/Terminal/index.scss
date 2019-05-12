@@ -1,0 +1,65 @@
+$terminal-border-radius: 3px;
+
+.terminal {
+  width: 60rem;
+  margin: 2rem 0 0 2rem;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+
+  .terminal__head,
+  .terminal__content {
+    padding: 0 1rem;
+    font-size: 1.2rem;
+  }
+
+  .terminal__head {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background-color: #E0E0E0;
+    border-radius: $terminal-border-radius $terminal-border-radius 0 0;
+    display: flex;
+
+    >div:first-of-type {
+      margin-right: auto;
+    }
+
+    >div:last-of-type {
+      margin-left: 1rem;
+    }
+  }
+
+  .terminal__content {
+    color: #EEEEEE;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0 0 $terminal-border-radius $terminal-border-radius;
+    font-family: monospace;
+    height: 30rem;
+    padding-top: 0.5rem;
+  }
+
+  .terminal__closed-icon {
+    display: none;
+  }
+
+  &.is--closed {
+
+    .terminal__head,
+    .terminal__content {
+      display: none;
+    }
+
+    .terminal__closed-icon {
+      display: flex;
+
+      >button {
+        cursor: pointer;
+        height: 5rem;
+        width: 5rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        border: none;
+      }
+    }
+  }
+}
